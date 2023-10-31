@@ -1,0 +1,11 @@
+:root {
+    /* prelim color palette based off of productivity psychology*/
+    --yellow: #ffe74c;
+    --red: #ff5964;
+    --white: #ffffff;
+    --dark-blue: #38618c;
+    --blue: #35a7ff;
+    /* perhaps future implementation/adaptation to light/dark mode */
+    font-family: "dreaming-outloud-sans",Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
