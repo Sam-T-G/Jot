@@ -21,4 +21,8 @@
 
 //Monthly+ Calendar
 
+//Future implementation of login/accounts?
+
+//Future backend implementation perhaps migration to React?
+
 
