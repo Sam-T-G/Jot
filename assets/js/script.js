@@ -8,27 +8,28 @@
 //Needs to be easy to navigate to new note or to previous notes somehow - Imperative
 const textInput = document.getElementById('textInput');
 
-// Set the initial font size
-const initialFontSize = 124; // You can adjust this value
+const initialFontSize = 124; // Initial font size
+const maxLineLength = 40; // Maximum characters per line
+const scaleFactor = 3; // Adjust this value to control resizing speed
 
 textInput.style.fontSize = initialFontSize + 'px';
 
 textInput.addEventListener('input', () => {
-    textInput.style.height = 'auto';
+    textInput.style.height = 'auto'; 
     textInput.style.height = textInput.scrollHeight + 'px';
 
-    // Check for line breaks (new lines) in the text content
     const text = textInput.innerText;
-    const newLines = (text.match(/\n/g) || []).length; // Count the number of new lines
+    const lines = text.split('\n');
+    let newFontSize = initialFontSize;
 
-    // Calculate the adjusted font size based on the number of new lines
-    const maxSize = initialFontSize; // Maximum font size
-    const minSize = 16; // Minimum font size
-    const scaleFactor = 7; // Adjust this value to control resizing speed
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i].length > maxLineLength) {
+            const additionalChars = lines[i].length - maxLineLength;
+            newFontSize -= scaleFactor * additionalChars;
+        }
+    }
 
-    const newSize = maxSize - scaleFactor * newLines;
-    const clampedSize = Math.max(minSize, newSize);
-
+    const clampedSize = Math.max(16, newFontSize);
     textInput.style.fontSize = clampedSize + 'px';
 });
 
