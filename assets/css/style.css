@@ -55,7 +55,7 @@ body {
     max-width: 1600px;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -67,6 +67,7 @@ body {
     font-size: 16px;
     padding: 5px;
     animation: blink-caret 1s step-end infinite;
+    overflow: hidden;
 }
 
 @keyframes blink-caret {
