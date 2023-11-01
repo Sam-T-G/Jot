@@ -6,6 +6,17 @@
 //Idea is to immediately be presented with a text input box
 //Button to enter note/can use enter key to save not
 //Needs to be easy to navigate to new note or to previous notes somehow - Imperative
+const textInput = document.getElementById('textInput');
+
+textInput.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+});
+
+window.addEventListener('load', function () {
+    textInput.focus();
+});
+
 
 //Perhaps be able to quickly rank priority? 
 
