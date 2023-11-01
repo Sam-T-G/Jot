@@ -8,25 +8,33 @@
 //Needs to be easy to navigate to new note or to previous notes somehow - Imperative
 const textInput = document.getElementById('textInput');
 
-function resizeText() {
-    const text = textInput.innerText;
-    const maxSize = 124; //maximum font size
-    const minSize = 16; //minimum font size
-    const scaleFactor = 0.5; //resizing speed
+// Set the initial font size
+const initialFontSize = 124; // You can adjust this value
 
-    const newSize = maxSize - scaleFactor * text.length;
-    const clampedSize = Math.max(minSize, newSize);
-
-    textInput.style.fontSize = clampedSize + 'px';
-}
+textInput.style.fontSize = initialFontSize + 'px';
 
 textInput.addEventListener('input', () => {
     textInput.style.height = 'auto';
     textInput.style.height = textInput.scrollHeight + 'px';
-    resizeText();
+
+    // Check for line breaks (new lines) in the text content
+    const text = textInput.innerText;
+    const newLines = (text.match(/\n/g) || []).length; // Count the number of new lines
+
+    // Calculate the adjusted font size based on the number of new lines
+    const maxSize = initialFontSize; // Maximum font size
+    const minSize = 16; // Minimum font size
+    const scaleFactor = 5; // Adjust this value to control resizing speed
+
+    const newSize = maxSize - scaleFactor * newLines;
+    const clampedSize = Math.max(minSize, newSize);
+
+    textInput.style.fontSize = clampedSize + 'px';
 });
 
 textInput.focus();
+
+
 
 
 
