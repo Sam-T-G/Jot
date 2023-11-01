@@ -24,7 +24,7 @@ textInput.addEventListener('input', () => {
     // Calculate the adjusted font size based on the number of new lines
     const maxSize = initialFontSize; // Maximum font size
     const minSize = 16; // Minimum font size
-    const scaleFactor = 5; // Adjust this value to control resizing speed
+    const scaleFactor = 7; // Adjust this value to control resizing speed
 
     const newSize = maxSize - scaleFactor * newLines;
     const clampedSize = Math.max(minSize, newSize);
