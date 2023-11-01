@@ -8,14 +8,26 @@
 //Needs to be easy to navigate to new note or to previous notes somehow - Imperative
 const textInput = document.getElementById('textInput');
 
-textInput.addEventListener('input', function () {
-    this.style.height = 'auto';
-    this.style.height = this.scrollHeight + 'px';
+function resizeText() {
+    const text = textInput.innerText;
+    const maxSize = 124; //maximum font size
+    const minSize = 16; //minimum font size
+    const scaleFactor = 0.5; //resizing speed
+
+    const newSize = maxSize - scaleFactor * text.length;
+    const clampedSize = Math.max(minSize, newSize);
+
+    textInput.style.fontSize = clampedSize + 'px';
+}
+
+textInput.addEventListener('input', () => {
+    textInput.style.height = 'auto';
+    textInput.style.height = textInput.scrollHeight + 'px';
+    resizeText();
 });
 
-window.addEventListener('load', function () {
-    textInput.focus();
-});
+textInput.focus();
+
 
 
 //Perhaps be able to quickly rank priority? 
