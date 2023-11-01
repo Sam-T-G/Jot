@@ -13,6 +13,11 @@ textInput.addEventListener('input', function () {
     this.style.height = this.scrollHeight + 'px';
 });
 
+window.addEventListener('load', function () {
+    textInput.focus();
+});
+
+
 //Perhaps be able to quickly rank priority? 
 
 //Able to create simple quick reminders
