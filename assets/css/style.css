@@ -5,7 +5,16 @@
     --white: #ffffff;
     --dark-blue: #38618c;
     --blue: #35a7ff;
+    --graphite: #41424C;
     /* perhaps future implementation/adaptation to light/dark mode */
     font-family: "dreaming-outloud-sans",Arial, Helvetica, sans-serif;
     line-height: 1.5;
+}
+
+#navigation {
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
 }
