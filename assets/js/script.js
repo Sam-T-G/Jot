@@ -35,8 +35,8 @@ textInput.addEventListener('input', () => {
 
 textInput.focus();
 
-
-
+//Pehaps need to refine note taking functionality further. Need to optimize thresholds of when text gets consolidated into lower font and automatically line breaks.
+//Additionally, need responsive feature in which text content re-formats spacing based off of manual line breaks.
 
 
 //Perhaps be able to quickly rank priority? 
