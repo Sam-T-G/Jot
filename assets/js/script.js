@@ -4,7 +4,7 @@
 
 //Able to take persistent/convenient on-the-fly notes or reminders
 //Idea is to immediately be presented with a text input box
-//Button to enter note/can use enter key to save not
+//Button to enter note/can use enter key to save note
 //Needs to be easy to navigate to new note or to previous notes somehow - Imperative
 const textInput = document.getElementById('textInput');
 
@@ -35,8 +35,8 @@ textInput.addEventListener('input', () => {
 
 textInput.focus();
 
-
-
+//Pehaps need to refine note taking functionality further. Need to optimize thresholds of when text gets consolidated into lower font and automatically line breaks.
+//Additionally, need responsive feature in which text content re-formats spacing based off of manual line breaks.
 
 
 //Perhaps be able to quickly rank priority? 
