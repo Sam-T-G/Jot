@@ -8,6 +8,7 @@
 //Needs to be easy to navigate to new note or to previous notes somehow - Imperative
 const textInput = document.getElementById('textInput');
 
+let noteCount = 1; //Internal note label beginning from 1
 const initialFontSize = 124; // Initial font size
 const maxLineLength = 40; // Maximum characters per line
 const scaleFactor = 3; // Adjust this value to control resizing speed
@@ -32,6 +33,23 @@ textInput.addEventListener('input', () => {
     const clampedSize = Math.max(16, newFontSize);
     textInput.style.fontSize = clampedSize + 'px';
 });
+
+textInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const note = textInput.innerText;
+        const noteSave = `note_${noteCount}`;
+        localStorage.setItem(noteSave, note);
+
+        noteCount++; //Increment note count by 1
+        clearTextInput();
+        textInput.focus(); //Set focus back to the text input
+    }
+});
+
+// Function that clears text input
+function clearTextInput() {
+    textInput.innerText = ''; 
+}
 
 textInput.focus();
 
